@@ -59,7 +59,8 @@ namespace FixAllTheThings
 			ProcessStartInfo proc = new ProcessStartInfo();
 			proc.WindowStyle = ProcessWindowStyle.Hidden;
 			proc.FileName = "cmd";
-			proc.Arguments = "/C shutdown /f /r /t 10";
+			proc.Arguments = "/C shutdown /f /r";
+			System.Threading.Thread.Sleep(9000);
 			Process.Start(proc);
 		}
 		
