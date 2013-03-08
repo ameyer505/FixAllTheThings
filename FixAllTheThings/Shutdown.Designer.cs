@@ -109,7 +109,6 @@ namespace FixAllTheThings
 			}
 			else{
 				timer1.Stop();
-				MessageBox.Show("Shutdown");
 				ProcessStartInfo proc = new ProcessStartInfo();
 				proc.WindowStyle = ProcessWindowStyle.Hidden;
 				proc.FileName = "cmd";
