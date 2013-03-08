@@ -55,13 +55,8 @@ namespace FixAllTheThings
 		//Restart Button
 		void Button1Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("Your computer will restart in 10 seconds");
-			ProcessStartInfo proc = new ProcessStartInfo();
-			proc.WindowStyle = ProcessWindowStyle.Hidden;
-			proc.FileName = "cmd";
-			proc.Arguments = "/C shutdown /f /r";
-			System.Threading.Thread.Sleep(9000);
-			Process.Start(proc);
+			Shutdown sd = new Shutdown();
+			sd.Show();
 		}
 		
 		//Screenshot Button
@@ -86,10 +81,12 @@ namespace FixAllTheThings
 		
 		void doWork(object sender, DoWorkEventArgs e){
 			Random r = new Random();
-			int i = r.Next(0,100);
+			int i = 0;
 			while(true){
-				i = (i+5)%100;
+				i = (i+(r.Next(0,100)))%100;
 				backgroundWorker1.ReportProgress(i);
+				if(i > 100)
+					i = 0;
 				System.Threading.Thread.Sleep(100);
 			}
 		}

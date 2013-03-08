@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
  
 namespace FixAllTheThings
 {
@@ -112,11 +113,14 @@ namespace FixAllTheThings
 									"Background Reponse Delta",
 									"Full Power on Front Side Bus",
 									"Reset Server",
-									"RMDIR /s/q C:\\Windows"});
+									"Fix ID10T Error"});
 			this.checkedListBox1.Location = new System.Drawing.Point(22, 183);
 			this.checkedListBox1.Name = "checkedListBox1";
 			this.checkedListBox1.Size = new System.Drawing.Size(176, 79);
 			this.checkedListBox1.TabIndex = 5;
+			Random r1 = new Random();
+			this.checkedListBox1.SetItemChecked(r1.Next(0,4), true);
+			this.checkedListBox1.SetItemChecked(r1.Next(0,4), true);
 			this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.CheckedListBox1SelectedIndexChanged);
 			// 
 			// comboBox1
@@ -140,8 +144,8 @@ namespace FixAllTheThings
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(190, 21);
 			this.comboBox1.TabIndex = 6;
-				Random r1 = new Random();
-				this.comboBox1.SelectedIndex = r1.Next(0,12);
+			Random r2 = new Random();
+			this.comboBox1.SelectedIndex = r2.Next(0,12);
 			// 
 			// label2
 			// 
@@ -169,6 +173,7 @@ namespace FixAllTheThings
 			// 
 			// button4
 			// 
+			this.button4.BackColor = System.Drawing.SystemColors.Control;
 			this.button4.Location = new System.Drawing.Point(218, 43);
 			this.button4.Name = "button4";
 			this.button4.Size = new System.Drawing.Size(168, 51);
